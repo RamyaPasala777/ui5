@@ -1,0 +1,83 @@
+<mvc:View
+    xmlns:cards="sap.f.cards"
+    controllerName="com.app.empdetailsapp.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content />
+
+        <!-- Property Binding -->
+        <!-- <VBox>
+    <Label id="idlabel1" text="Name" />
+    <Input id="input1" type="Text" width="20%" value="{sample>/employee/fName}"/>
+    <Label id="idlabel2" text="age" />
+    <Input id="input2" type="Number" value="{sample>/employee/age}" width="20%" />
+
+    <Input id="ideditable" editable="{=${sample>/employee/age}>30?true:false}"></Input>
+   
+    <Button id="idbutton" text="submit"></Button>
+    </VBox> -->
+
+        <!-- Aggregation Binding -->
+
+        <!-- <Table
+            id="tableid"
+            items="{/employee/}"
+            alternateRowColors="true"
+            growing="true"
+            growingThreshold="4"
+        >
+            <columns>
+                <Column>
+                    <header>
+                        <Title text="name" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Title text="phone" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Title text="email" />
+                    </header>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <Text text="{fName}" />
+                    <Text text="{phone}" />
+                    <Text text="{email}" />
+                </ColumnListItem>
+            </items>
+        </Table> -->
+
+        <!-- Element Binding -->
+
+        <!-- <form:SimpleForm binding="{/person}" >
+
+        <Label text="NAME"/>
+        <Input value="{EmployeeName}" width="20%"></Input>
+
+       <Label text="Age"/>
+        <Input value="{EmployeeAge}" width="20%"></Input>
+       
+        </form:SimpleForm> -->
+
+        <!-- Expression Binding -->
+
+        <l:VerticalLayout binding="{/person}">
+       <Label text="age"/>
+       <Input value="" editable="{=${EmployeeAge}>30?true:false}"/>   
+       </l:VerticalLayout>
+        
+    </Page>
+</mvc:View>
